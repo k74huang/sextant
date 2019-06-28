@@ -1,4 +1,9 @@
 import discord
+import re
+
+pattern = re.compile("([0-9,:])+ \([0-9,\,]+\) -")
+
+currMap = ""
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -12,8 +17,8 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
 
-        if message.content.startswith('!hello'):
-            await message.channel.send('Hello {0.author.mention}'.format(message))
+        if pattern.match(message.content):
+            await message.channel.send('That\'s a match! {0.author.mention}'.format(message))
 
 client = MyClient()
 client.run('Mjk5Mjk4MTU5MTkxMTMwMTEz.XRW1nw.V4VinOaGCqnWOzWovLckj2ozsPk')
