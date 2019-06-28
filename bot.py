@@ -18,9 +18,11 @@ class MyClient(discord.Client):
             return
 
         if pattern.match(message.content):
-            embed = discord.Embed(color=0xff66aa)
             link= (message.content.replace(" ", "_"))[:-2]
-            embed.add_field(name= message.author.display_name, value="<osu://edit/" + link + ">", inline=False)
+            embed = discord.Embed(color=0xff66aa, title = "<osu://edit/" + link + ">")
+            embed.set_author(name=message.author.display_name, icon_url=message.author.avatar_url)
+            # embed.add_field(name=, inline=False)
+            await message.delete();
             await message.channel.send(embed=embed)
 
 client = MyClient()
