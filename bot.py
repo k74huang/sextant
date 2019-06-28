@@ -18,9 +18,10 @@ class MyClient(discord.Client):
             return
 
         if pattern.match(message.content):
-            embed = discord.Embed(title=message.content, url = 'http://www.github.com/k74huang', color=0xff66aa)
+            embed = discord.Embed(color=0xff66aa)
+            link= (message.content.replace(" ", "_"))[:-2]
+            embed.add_field(name= message.author.display_name, value="<osu://edit/" + link + ">", inline=False)
             await message.channel.send(embed=embed)
-            # await message.channel.send('That\'s a match! {0.author.mention}'.format(message))
 
 client = MyClient()
 client.run('Mjk5Mjk4MTU5MTkxMTMwMTEz.XRW1nw.V4VinOaGCqnWOzWovLckj2ozsPk')
