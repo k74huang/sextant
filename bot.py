@@ -14,7 +14,7 @@ class MyClient(discord.Client):
         # we do not want the bot to reply to itself
         if message.author.id == self.user.id:
             return
-        else:
+        if(pattern.search(message.content)):
             stringToPrint = message.content;
             allLinks = pattern.findall(message.content);
             for link in allLinks:
