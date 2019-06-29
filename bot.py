@@ -1,9 +1,7 @@
 import discord
 import re
 
-pattern = re.compile("([0-9,:])+ \([0-9,\,]+\) -")
-
-currMap = ""
+pattern = re.compile("(([0-9,:]){3,} \([0-9,\,]+\) -)")
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -16,14 +14,17 @@ class MyClient(discord.Client):
         # we do not want the bot to reply to itself
         if message.author.id == self.user.id:
             return
-
-        if pattern.match(message.content):
-            link= (message.content.replace(" ", "_"))[:-2]
-            embed = discord.Embed(color=0xff66aa, title = "<osu://edit/" + link + ">")
+        else:
+            stringToPrint = message.content;
+            allLinks = pattern.findall(message.content);
+            for link in allLinks:
+                print(link[0])
+                linkToPrint = "<osu://edit/" + link[0].replace(" ", "_")[:-2] + ">"
+                stringToPrint = stringToPrint.replace(link[0], linkToPrint)
+            embed = discord.Embed(color=0xff66aa, title = stringToPrint)
             embed.set_author(name=message.author.display_name, icon_url=message.author.avatar_url)
-            # embed.add_field(name=, inline=False)
             await message.delete();
             await message.channel.send(embed=embed)
 
 client = MyClient()
-client.run('token')
+client.run('Mjk5Mjk4MTU5MTkxMTMwMTEz.XRbd1w.8nl3aQMxTwH473n4th94vSWizHw')
