@@ -27,4 +27,4 @@ class MyClient(discord.Client):
             await message.channel.send(embed=embed)
 
 client = MyClient()
-client.run('Mjk5Mjk4MTU5MTkxMTMwMTEz.XRbd1w.8nl3aQMxTwH473n4th94vSWizHw')
+client.run('token_goes_here')
