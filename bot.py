@@ -1,5 +1,10 @@
 import discord
+import os
+from dotenv import load_dotenv
 import re
+
+load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 pattern = re.compile("(([0-9,:]){3,} \([0-9,\,]+\) -)")
 
@@ -27,4 +32,4 @@ class MyClient(discord.Client):
             await message.channel.send(embed=embed)
 
 client = MyClient()
-client.run('token_goes_here')
+client.run(BOT_TOKEN)
