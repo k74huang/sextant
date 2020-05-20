@@ -6,17 +6,27 @@ Usami Renko is a character from the Touhou Project series that has the ability t
 
 Here, she exists as a utility Discord bot, converting timestamps copied from the osu! editor (currently only supporting osu! standard) into clickable links on Discord. Any message sent containing an osu! editor timestamp will be replaced by a message from Renko that replaces the timestamps with clickable versions and maintains the rest of the message as it was originally sent. 
 
-Invite her to your server [here](https://discord.com/api/oauth2/authorize?client_id=299298159191130113&permissions=124928&scope=bot)! She's doing her best at the moment but please be advised she's still learning!
+Invite her to your server [here](https://discord.com/api/oauth2/authorize?client_id=299298159191130113&permissions=92160&scope=bot)! She's doing her best at the moment but please be advised she's still learning!
 
 If she causes you any trouble or refuses to do something, you can open an issue here on this repository or message me [@thunderbird2678](https://twitter.com/thunderbird2678) or on Discord (thunderbird#2678)!
 
 ---
 
-ToDo:
+Changes as of 19 May 2020:
 
-* Add support for osu! Mania
-* Add support for copying editor times without hitobjects
+* Added support for osu! Mania
+* Added support for copying editor times without hitobjects
+* Fixed a bug where timestamps over 256 characters wouldn't show properly
+* Implemented additional logging
+* Added the dash behind the timestamp back in (I think it looks cleaner for modding but I may be mistaken)
+* Updated OAUTH URL (please reinvite her if you added her before this update!)
+
+---
+
+ToDo: 
+
 * Add a react-based system to allow the original message sender to delete their message
+* Investigate possibility of hyperlinking so I can display mania timestamps as something other than a jumbled mess
 
 ---
 
