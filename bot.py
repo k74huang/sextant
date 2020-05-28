@@ -22,7 +22,7 @@ class MyClient(discord.Client):
 
     async def on_guild_join(self, guild):
         print("Renko was invited to " + guild.name + "!")
-        logFile.write("Renko was invited to " + guild.name + "!\n")
+        # logFile.write("Renko was invited to " + guild.name + "!\n")
 
     async def on_message(self, message):
 
@@ -40,12 +40,12 @@ class MyClient(discord.Client):
             for link in allLinks:
 
                 print("message with timestamp detected: " + message.content)
-                logFile.write(
-                    "message with timestamp detected: " + message.content + "\n")
-                print("sent by: " + modder.display_name + "(" + modder.name + "#" + modder.discriminator + ")"
-                      " at: " + datetime.now().strftime("%c") + " in #" + message.channel.name)
-                logFile.write("sent by: " + modder.display_name + "(" + modder.name + "#" + modder.discriminator + ")"
-                              " at: " + datetime.now().strftime("%c") + " in #" + message.channel.name + "\n")
+                # logFile.write(
+                #     "message with timestamp detected: " + message.content + "\n")
+                # print("sent by: " + modder.display_name + "(" + modder.name + "#" + modder.discriminator + ")"
+                #       " at: " + datetime.now().strftime("%c") + " in #" + message.channel.name)
+                # logFile.write("sent by: " + modder.display_name + "(" + modder.name + "#" + modder.discriminator + ")"
+                #               " at: " + datetime.now().strftime("%c") + " in #" + message.channel.name + "\n")
 
                 linkToPrint = "<osu://edit/" + \
                     link[0].replace(" ", "_")[:-2] + "> -"
