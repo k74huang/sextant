@@ -9,8 +9,8 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 pattern = re.compile("(([0-9,:]){3,} (\([0-9,\,|]+\) )*-)")
 
-logFile = open(datetime.now().strftime("%c").replace(
-    " ", "_").replace(":", "") + ".log", 'w+')
+# logFile = open(datetime.now().strftime("%c").replace(
+#     " ", "_").replace(":", "") + ".log", 'w+')
 
 
 class MyClient(discord.Client):
